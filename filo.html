@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filo Project</title> 
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <section class="project-details" style="padding: 10rem 10%; min-height: 100vh; background: var(--bg-color);">
+        
+        <!-- Vissza a főoldalra gomb -->
+        <a href="index.html#projects" class="btn" style="margin-bottom: 4rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <i class='bx bx-left-arrow-alt'></i> Vissza a projektekhez
+        </a>
+
+        <!-- PROJEKT CÍME (Ezt átírhatod a klip pontos nevére!) -->
+        <h2 class="heading" style="text-align: left; font-size: 5rem; margin-bottom: 2rem;">Filo-<span>Sír</span></h2>
+
+        <!-- === KÉTOSZLOPOS ELRENDEZÉS === -->
+        <div class="project-bottom-section">
+            
+            <!-- BAL OLDAL: A videók (Egymás alatt, nagyban) -->
+            <div class="left-gallery" style="display: flex; flex-direction: column; gap: 3rem;">
+                
+                <video src="filo/filo-snitt.mp4" autoplay loop muted style="width: 100%; max-height: 70vh; border-radius: 0.8rem; box-shadow: 0 5px 15px rgba(0,0,0,0.5);" playsinline></video>
+                <video src="filo/filo-raw.mp4" autoplay loop muted playsinline style="width: 100%; max-height: 70vh; border-radius: 0.8rem; box-shadow: 0 5px 15px rgba(0,0,0,0.5);"playsinline></video>
+                
+            </div>
+
+            <!-- JOBB OLDAL: Szöveges leírás -->
+            <div class="right-info">
+                <div class="project-details-info">
+                    <h3>Leírás</h3>
+                    
+                    <!-- Alapvető infók -->
+                    <div class="project-meta">
+                        <p><strong>Szerepkör:</strong> VFX Artist / Compositor</p>
+                        <!-- Ide a szögletes zárójel helyére majd beírhatod a klip címét! -->
+                        <p><strong>Projekt:</strong> Filo-Sír–Rotoscoping</p>
+                    </div>
+
+                    <!-- Technikai részletek / Feladatok listája -->
+                    <ul class="project-tasks">
+                        <li><strong>Rotoszkópizálás és Maszkolás:</strong> Precíz, képkockáról képkockára történő animált maszkolás (rotoscoping) elkészítése egy kézikonzol (játékgép) kijelzőjére Adobe After Effects-ben.</li>
+                        <li><strong>Screen Replacement Előkészítés:</strong> A felvétel mozgásának lekövetése és az élek finomhangolása (edge refinement), tökéletes alapot (alfa csatornát) biztosítva a digitális tartalom későbbi beillesztéséhez.</li>
+                        <li><strong>VFX Asszisztencia:</strong> A kompozíciós rétegek tiszta és strukturált előkészítése a pipeline-ban, megkönnyítve a zökkenőmentes utómunkát és a végleges grafikák integrációját.</li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

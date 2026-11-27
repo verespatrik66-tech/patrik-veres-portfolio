@@ -1,0 +1,773 @@
+/* ==========================================================================
+   VERES PATRIK - PORTFÓLIÓ CSS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ALAPBEÁLLÍTÁSOK ÉS VÁLTOZÓK
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #080808;
+    --second-bg-color: #101010;
+    --text-color: white;
+    --main-color: #5a287c;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 15%;
+}
+
+/* Egyedi görgetősáv (Scrollbar) */
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color); 
+}
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
+
+/* Kiemelt lila szövegszín */
+span {
+    background: linear-gradient(270deg, #eb04f3 10%, #5a287c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* --------------------------------------------------------------------------
+   2. FEJLÉC ÉS NAVIGÁCIÓ (HEADER)
+   -------------------------------------------------------------------------- */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 4rem 15%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+#menu-icon {
+    display: none;
+}
+
+/* A látható, egymás melletti menüpontok */
+.navbar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4rem !important;
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+
+/* --------------------------------------------------------------------------
+   3. GOMBOK ÉS IKONOK (ÁLTALÁNOS)
+   -------------------------------------------------------------------------- */
+.btn-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color);
+}
+
+.btn-group a:nth-last-of-type(2) {
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+
+.btn-group a:nth-last-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+}
+
+.gradient-btn {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background: linear-gradient(270deg, #eb04f3 10%, #5a287c 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.gradient-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 4rem 1rem 0 0;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+    background-color: var(--main-color);
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. FŐOLDAL: HOME SZEKCIÓ
+   -------------------------------------------------------------------------- */
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+    overflow: hidden;
+}
+
+.main-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-content h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.home-content h3 {
+    margin: 1rem 0;
+    font-size: 5rem;
+}
+
+.home-content p {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.home img { 
+    width: 32vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color), 0 0 60px var(--main-color);
+}
+
+
+/* --------------------------------------------------------------------------
+   5. FŐOLDAL: ABOUT (RÓLAM) SZEKCIÓ
+   -------------------------------------------------------------------------- */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    background: var(--second-bg-color);
+    padding: 10rem 10%;
+}
+
+.about-img img {
+    width: 32vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.4s ease-in-out;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+.about-content h2 {
+    font-size: 7rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.about-content p {
+    font-size: 1.8rem;
+    margin: 2rem 0 3rem;
+    line-height: 1.6;
+}
+
+/* Képesség sávok */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.skill-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.progress-fill {
+    display: block;
+    height: 100%;
+    background: var(--main-color);
+    border-radius: 2rem;
+    box-shadow: 0 0 10px var(--main-color);
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+.progress-fill.blender { width: 90%; }
+.progress-fill.video { width: 60%; }
+.progress-fill.illustrator { width: 45%; }
+.progress-fill.ae { width: 25%; }
+
+@keyframes fillBar {
+    from {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    to {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   6. FŐOLDAL: PROJEKTEK KÁRTYÁK SZEKCIÓ
+   -------------------------------------------------------------------------- */
+.projects {
+    min-height: auto; 
+    padding-bottom: 5rem; 
+}
+
+.projects-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 3rem; 
+    padding: 4rem 0;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(10px); 
+    border-radius: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+    transition: 0.4s ease; 
+}
+
+.project-card:hover {
+    transform: translateY(-10px); 
+    border-color: var(--main-color); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+}
+
+.project-card img,
+.project-card video {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 1.5rem; 
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.project-card img:hover,
+.project-card video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.project-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.project-card p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. ALOLDALAK: PROJEKT RÉSZLETEK KÖZÖS STÍLUSAI
+   -------------------------------------------------------------------------- */
+.project-details {
+    background: radial-gradient(circle at 50% 30%, rgba(180, 0, 255, 0.05) 0%, var(--bg-color) 70%) !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+.project-intro {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 6rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-intro .heading {
+    font-size: 6.5rem !important; 
+    margin-bottom: 2.5rem !important;
+}
+
+.project-intro p {
+    font-size: 2.2rem !important; 
+    line-height: 1.8 !important; 
+    max-width: 800px !important; 
+    color: rgba(255, 255, 255, 0.85) !important; 
+    text-align: center !important;
+    text-wrap: balance !important; 
+    margin: 0 !important;
+}
+
+.project-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    gap: 3rem !important;
+    margin-top: 4rem !important;
+}
+
+.project-gallery img,
+.project-gallery video {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 1.5rem !important;
+    margin: 0 !important;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    transition: 0.4s ease;
+}
+
+.project-gallery img:hover,
+.project-gallery video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.project-gallery .featured-media {
+    grid-column: 1 / -1 !important; 
+    max-width: 1200px !important;
+    margin: 0 auto 3rem auto !important;
+}
+
+.project-gallery.flex-gallery {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; 
+    gap: 1.5rem !important; 
+}
+
+.project-gallery .tall-media {
+    max-height: 75vh !important;
+    width: auto !important;
+    max-width: 100% !important; 
+    object-fit: contain !important; 
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+.project-gallery.flex-gallery img,
+.project-gallery.flex-gallery video {
+    width: auto !important; 
+    max-height: 75vh !important; 
+    max-width: 100% !important;
+    margin: 0 !important; 
+}
+
+/* Aloldali leírások és listák */
+.project-details-info {
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: left;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-details-info h3 {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.project-details-info p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.project-details-info .btn {
+    margin-top: 3rem;
+}
+
+.project-meta {
+    margin-bottom: 3rem;
+    text-align: left;
+    width: 100%;
+}
+
+.project-meta p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.project-meta strong, 
+.project-tasks strong {
+    color: var(--main-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.project-tasks {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 3rem;
+}
+
+.project-tasks li {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.project-tasks li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--main-color);
+    font-size: 2rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   8. ÚJ: SZALAI KÉTOSZLOPOS ELRENDEZÉS
+   -------------------------------------------------------------------------- */
+.project-bottom-section {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.left-gallery {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.left-gallery img {
+    width: 100%;
+    border-radius: 0.8rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: 0.3s ease;
+}
+
+.left-gallery img:hover {
+    transform: scale(1.02);
+}
+
+.right-info {
+    flex: 1;
+}
+
+.right-info .project-details-info {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   9. FŐOLDAL: KAPCSOLAT (CONTACT) SZEKCIÓ
+   -------------------------------------------------------------------------- */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--second-bg-color);
+    min-height: auto;
+    padding-bottom: 10rem;
+}
+
+.contact-heading {
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 0.8rem 2.5rem;
+    margin-bottom: 3rem;
+    cursor: default;
+}
+
+.contact-content h3 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.contact-socials {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. MOBIL NÉZET (Telefonokra optimalizált profi elrendezés)
+   -------------------------------------------------------------------------- */
+@media (max-width: 950px) {
+    /* Alap betűméret csökkentése, hogy minden arányosan kisebb legyen */
+    html {
+        font-size: 50%; 
+    }
+    
+    /* Kevesebb üres hely a széleken, hogy a tartalomé legyen a főszerep */
+    section {
+        padding: 10rem 5% 5rem 5% !important; 
+    }
+    
+    /* Fejléc és Menü mobilon */
+    .header {
+        padding: 2rem 5% !important;
+        flex-direction: column !important; /* Egymás alá kényszeríti a logót és a menüt */
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+
+    .navbar {
+        gap: 1.5rem !important; 
+        flex-wrap: wrap !important; 
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    /* Ez a rész hiányzott: kikapcsolja a nagy asztali margót! */
+    .navbar a {
+        margin-left: 0 !important; 
+        font-size: 1.5rem !important; 
+    }
+
+    /* Főoldal igazítások */
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 4rem;
+        margin-top: 8rem; /* Kicsit lejjebb toljuk a vastagabb menü miatt */
+    }
+    .home-content h1 {
+        font-size: 5.5rem; /* Ne lógjon ki a nagy cím */
+    }
+    .home-img img, .about-img img {
+        width: 75vw; /* Nagyobb, látványosabb portré a mobilon */
+    }
+    
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 4rem;
+    }
+
+    /* Projektek főoldalon (1 oszlop) */
+    .projects-box {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- ALOLDALAK MOBILOS TÖKÉLETESÍTÉSE --- */
+    
+    /* A projektcímek mobilon középre zárva jobban mutatnak */
+    .heading {
+        font-size: 4rem !important; 
+        text-align: center !important; 
+    }
+    
+    /* A "Vissza a projektekhez" gombot középre húzzuk */
+    .project-details .btn {
+        margin: 0 auto 4rem auto !important;
+        display: flex !important;
+        justify-content: center;
+        width: fit-content;
+    }
+
+    /* Alsó, kétoszlopos rész összecsukása 1 oszloposra */
+    .project-bottom-section {
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    /* Képek és videók kitöltik a telefont */
+    .left-gallery {
+        width: 100%;
+        grid-template-columns: 1fr; /* A Szalai 10 képe is 1 oszlopba ugrik */
+    }
+    
+    .left-gallery img, .left-gallery video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 60vh !important; /* Ne legyen indokolatlanul hosszú telefonon */
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    /* Szöveges rész mobilon */
+    .right-info {
+        width: 100%;
+    }
+    .project-details-info {
+        padding: 0; /* Levesszük a belső margót, hadd fusson ki szépen */
+    }
+    .project-details-info h3 {
+        font-size: 2.8rem;
+    }
+    
+    /* Lista bekezdéseinek finomítása */
+    .project-tasks li {
+        font-size: 1.5rem;
+        padding-left: 2rem;
+    }
+    .project-tasks li::before {
+        font-size: 1.8rem;
+    }
+}

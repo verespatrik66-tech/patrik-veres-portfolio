@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hofi Project</title> 
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <section class="project-details" style="padding: 10rem 10%; min-height: 100vh; background: var(--bg-color);">
+        
+        <!-- Vissza a főoldalra gomb -->
+        <a href="index.html#projects" class="btn" style="margin-bottom: 4rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <i class='bx bx-left-arrow-alt'></i> Vissza a projektekhez
+        </a>
+
+        <!-- PROJEKT CÍME -->
+        <h2 class="heading" style="text-align: left; font-size: 5rem; margin-bottom: 2rem;">Hofi <span>Project</span></h2>
+
+        <!-- === KÉTOSZLOPOS ELRENDEZÉS === -->
+        <div class="project-bottom-section">
+            
+            <!-- BAL OLDAL: A videó -->
+            <div class="left-gallery">
+                <video src="hofi/hofi-fegyver.mp4" style="width: 100%; border-radius: 0.8rem; box-shadow: 0 5px 15px rgba(0,0,0,0.5);" controls playsinline></video>
+                <video src="hofi/hofi-animated.mp4" autoplay loop muted playsinline style="width: 100%; border-radius: 0.8rem; box-shadow: 0 5px 15px rgba(0,0,0,0.5);" controls playsinline></video>
+                <img src="hofi/hofi-side.png" alt="Szalai Project 3">
+                <img src="hofi/hofi-ruha.png" alt="Szalai Project 3">
+            </div>
+
+            <!-- JOBB OLDAL: Szöveges leírás -->
+            <div class="right-info">
+                <div class="project-details-info">
+                    <h3>Leírás</h3>
+                    
+                    <!-- Alapvető infók -->
+                    <div class="project-meta">
+                        <p><strong>Szerepkör:</strong> 3D Character Artist / Animator</p>
+                        <p><strong>Projekt:</strong> Beton.Hofi – Teljes Digitális Hasonmás (Digital Double) és Animáció</p>
+                    </div>
+
+                    <!-- Technikai részletek / Feladatok listája -->
+                    <ul class="project-tasks">
+                        <li><strong>Digitális Hasonmás (Digital Double) Megalkotása:</strong> Beton.Hofi előadóművész teljes 3D-s karaktermodelljének felépítése, kiemelt figyelmet fordítva a személyes vizuális jegyekre és az élethű megjelenésre.</li>
+                        <li><strong>Arcgenerálás és Topológia:</strong> Az arcstruktúra és az élethű arckarakterisztika precíz kialakítása FaceGen szoftver integrálásával.</li>
+                        <li><strong>Digitális Szabászat és Ruhaszimuláció:</strong> A karakter ruházatának modellezése, szabásmintáinak kialakítása, valamint a szövetek valósághű fizikai szimulációja a Marvelous Designer és CLO 3D programok kombinált használatával.</li>
+                        <li><strong>Grooming (Haj és Szőrzet):</strong> A karakter életszerűségét adó finom emberi részletek – a frizura és az arcszőrzet – aprólékos procedurális kidolgozása Blenderben.</li>
+                        <li><strong>Karakteranimáció:</strong> A kész 3D modell felcsontozása és animálása.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
